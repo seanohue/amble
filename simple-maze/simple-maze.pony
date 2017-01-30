@@ -3,4 +3,8 @@ use "directions"
 use "map-settings"
 
 actor SimpleMazeGenerator
-  new create()
+  let settings: MapSettings
+  let height: I64
+  let width: I64
+
+  new create(settings': MapSettings) =>

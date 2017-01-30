@@ -1,11 +1,10 @@
 primitive DefaultMapSettings
-  fun width():  I32 => 50
-  fun height(): I32 => 30
+  fun width():  I64 => 50
+  fun height(): I64 => 30
 
 trait HasWidth
-  fun width(): I32 => 50
-
+  fun width():  I64 => 50
 trait HasHeight
-  fun height(): I32 => 30
+  fun height(): I64 => 30
 
 type MapSettings is (HasWidth & HasHeight)
