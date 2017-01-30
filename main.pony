@@ -1,11 +1,9 @@
 use "directions"
-
-primitive DefaultMapSettings
-  fun width():  I32 => 50
-  fun height(): I32 => 30
+use "coords"
+use "simple-maze"
+use "map-settings"
 
 actor Main
   new create(env: Env) =>
-    env.out.print(North.opposite().string()) // should be south
-
+    env.out.print(Coords.create(0,0).translate(North.opposite()).results()) // should be (0, -1)
 
