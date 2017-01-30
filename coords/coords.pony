@@ -12,11 +12,11 @@ class Coordinates
     y + yChange
     return this
   
-  fun translate(d: Direction): Coordinates =>
-    if (d == North) then return this.translate( 0,  1) end
-    if (d == South) then return this.translate( 0, -1) end
-    if (d == East)  then return this.translate( 1,  0) end
-    if (d == West)  then return this.translate(-1,  0) end
+  fun translateByDirection(d: Direction, amount: I64): Coordinates =>
+    if (d == North) then return this.translate( 0,  amount) end
+    if (d == South) then return this.translate( 0, -amount) end
+    if (d == East)  then return this.translate( amount,  0) end
+    if (d == West)  then return this.translate(-amount,  0) end
     return this
 
   fun result(): String => x.string().add(", ").add(y.string())
