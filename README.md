@@ -14,11 +14,11 @@ Algorithm(s) will be borrowed from roguebasin.
 #### Features:
 
 * [X] Handles 2D coordinates.
-* [_] Handles 3D coordinates.
+* [ ] Handles 3D coordinates.
 * [X] Handles 2D cardinal directions.
-* [_] Handles 3D directions.
-* [_] Handles 2D maps as a concept.
-* [_] Handles 3D maps as a concept.
+* [ ] Handles 3D directions.
+* [ ] Handles 2D maps as a concept.
+* [ ] Handles 3D maps as a concept.
 * [X] Handles display of 2D map tiles.
-* [_] Implementation of above algorithms.
-* [_] Implementation a CLI tool with options.
+* [ ] Implementation of above algorithms.
+* [ ] Implementation a CLI tool with options.
