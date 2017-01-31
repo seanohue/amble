@@ -6,7 +6,7 @@ Algorithm(s) will be borrowed from roguebasin.
 * Install [Pony](https://github.com/ponylang/ponyc/blob/master/README.md#installation).
 * Run `ponyc` in the root directory of this repository.
 * ...
-* Tired Joke?
+* Run the `./amble` binary.
 
 ### Algorithms Planned Thus Far
 * [ ] [Simple Maze](http://www.roguebasin.com/index.php?title=Simple_maze#Maze_Generator_in_Javascript)
