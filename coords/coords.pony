@@ -1,4 +1,4 @@
-use "directions"
+use "../directions"
 
 class Coordinates
   let x: I64
@@ -8,16 +8,14 @@ class Coordinates
     y = y'
   
   fun translate(xChange: I64, yChange: I64): Coordinates =>
-    x + xChange
-    y + yChange
-    return this
+    Coordinates.create(x + xChange, y + yChange)
   
   fun translateByDirection(d: Direction, amount: I64): Coordinates =>
-    if (d == North) then return this.translate( 0,  amount) end
-    if (d == South) then return this.translate( 0, -amount) end
-    if (d == East)  then return this.translate( amount,  0) end
-    if (d == West)  then return this.translate(-amount,  0) end
-    return this
+    if (d.eq(North)) then return this.translate( 0,  amount) end
+    if (d.eq(South)) then return this.translate( 0, -amount) end
+    if (d.eq(East) ) then return this.translate( amount,  0) end
+    if (d.eq(West) ) then return this.translate(-amount,  0) end
+    Coordinates.create(x, y)
 
   fun result(): String => x.string().add(", ").add(y.string())
   fun eq(other: Coordinates): Bool => x.eq(other.x) and y.eq(other.y)
