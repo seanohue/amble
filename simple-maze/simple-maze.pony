@@ -9,15 +9,13 @@ actor SimpleMazeGenerator
   let _height: I64
   let _width: I64
   let _map: Map2D
-  let rendering: String
   let _env: Env
 
   new create(env: Env) =>
     _height   = _settings.height()
     _width    = _settings.width()
-    _map      = Map2D.create(_height * _width)
+    _map      = Map2D.create(env)
     _env      = env
-    rendering = ""
 
   be generate() =>
     _env.out.print("Generating...")
@@ -41,8 +39,10 @@ actor SimpleMazeGenerator
       while (x < _width) do
         let coords = Coordinates.create(x, y)
         _env.out.print(coords.string())
-        let tile   = MapTile.create(coords, "#")
-        _map.update(i, tile)
+        _env.out.print(i.string())
+        
+        let tile = MapTile.create(coords, "#")
+        _map.push(tile)
         i = i + 1
         x = x + 1
       end
@@ -58,10 +58,11 @@ actor SimpleMazeGenerator
 
 
   be render() => 
-    for tile in _map.tiles.values() do
-      rendering.add(tile.string())
+    var rendering: String = ""
+    for tile in _map.values() do
+      rendering = rendering.add(tile.string())
     end
-    rendering.add("Map Finished")
+    rendering = rendering.add("Map Finished")
     _env.out.print(rendering)
 
       
