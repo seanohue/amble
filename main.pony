@@ -6,9 +6,6 @@ use "map-tile"
 
 actor Main
   new create(env: Env) =>
-    let gen: SimpleMazeGenerator = SimpleMazeGenerator.create()
+    let gen: SimpleMazeGenerator = SimpleMazeGenerator.create(env)
     gen.generate()
-    env.out.print("Generating...")
-    env.out.print(gen.render())    
-     // should be #
 

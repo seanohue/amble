@@ -17,5 +17,5 @@ class Coordinates
     if (d.eq(West) ) then return this.translate(-amount,  0) end
     Coordinates.create(x, y)
 
-  fun result(): String => x.string().add(", ").add(y.string())
+  fun string(): String => x.string().add(", ").add(y.string())
   fun eq(other: Coordinates): Bool => x.eq(other.x) and y.eq(other.y)
