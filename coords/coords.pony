@@ -10,12 +10,15 @@ class Coordinates
   fun translate(xChange: I64, yChange: I64): Coordinates =>
     Coordinates.create(x + xChange, y + yChange)
   
-  fun translateByDirection(d: Direction, amount: I64): Coordinates =>
-    if (d.eq(North)) then return this.translate( 0,  amount) end
-    if (d.eq(South)) then return this.translate( 0, -amount) end
-    if (d.eq(East) ) then return this.translate( amount,  0) end
-    if (d.eq(West) ) then return this.translate(-amount,  0) end
-    Coordinates.create(x, y)
+  fun translateByDirection(dir: Direction, amount: I64 = 1): Coordinates =>
+    match dir
+    | North => translate( 0,  amount)
+    | South => translate( 0, -amount)
+    | East  => translate( amount,  0)
+    | West  => translate(-amount,  0)
+    else 
+      Coordinates.create(x, y)
+    end
 
   fun string(): String => x.string().add(", ").add(y.string())
   fun eq(other: Coordinates): Bool => x.eq(other.x) and y.eq(other.y)
