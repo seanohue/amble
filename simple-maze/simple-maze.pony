@@ -58,12 +58,15 @@ actor SimpleMazeGenerator
 
 
   be render() => 
-    var rendering: String = ""
+    _env.out.write("-")
     for tile in _map.values() do
-      rendering = rendering.add(tile.string())
+      _env.out.write(tile.string())
+      if (tile.getCoordinates().x  == (_width - 1)) then
+        _env.out.print("-")
+        _env.out.write("-")
+      end
     end
-    rendering = rendering.add("Map Finished")
-    _env.out.print(rendering)
+    _env.out.print("MAP DONE")
 
       
   

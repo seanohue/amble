@@ -14,6 +14,4 @@ class Map2D
     tiles.push(tile)
 
   fun ref values(): ArrayValues[MapTile, Array[MapTile]] =>
-    _env.out.print("SIZE")
-    _env.out.print(tiles.size().string())
     tiles.values()
