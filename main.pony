@@ -6,5 +6,9 @@ use "map-tile"
 
 actor Main
   new create(env: Env) =>
-    env.out.print(MapTile.create(Coordinates.create(0,0).translateByDirection(North.opposite(), 1), "#").string()) // should be #
+    let gen: SimpleMazeGenerator = SimpleMazeGenerator.create()
+    gen.generate()
+    env.out.print("Generating...")
+    env.out.print(gen.render())    
+     // should be #
 
