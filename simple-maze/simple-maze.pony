@@ -58,8 +58,9 @@ actor SimpleMazeGenerator
   
   fun carve(firstX: I64, firstY: I64, direction: Direction): Bool => 
     let firstCoords: Coordinates = Coordinates.create(firstX, firstY)
-    var targetTile: MapTile = _map.getByCoords(firstCoords)
-    if targetTile.getGlyph() == "error" then return false end
+   //  _map.setTileGlyphByCoords(firstCoords, )
+    var targetTile: this->MapTile ref^ = _map.getByCoords(firstCoords)
+    if targetTile.string() == "error" then return false end
     targetTile.setGlyph(".")
     true
     
