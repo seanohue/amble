@@ -21,9 +21,9 @@ actor SimpleMazeGenerator
     _env.out.print("Generating...")
     prefill()
     var keepGoing: Bool = true
-    while keepGoing do
+    while (keepGoing) {
       keepGoing = carve(0, 0, North)
-    end
+    }
     render()
 
     // Creates map which is stored in 2D map
@@ -56,12 +56,8 @@ actor SimpleMazeGenerator
     end
 
   
-  fun carve(firstX: I64, firstY: I64, direction: Direction): Bool => 
-    let firstCoords: Coordinates = Coordinates.create(firstX, firstY)
-    var targetTile: MapTile = _map.getByCoords(firstCoords)
-    if targetTile.getGlyph() == "error" then return false end
-    targetTile.setGlyph(".")
-    true
+  fun carve(firstX: I64, firstY: I64, direction: Direction) => 
+    targetTile = _map.getByCoords(Coordinates.create(firstX, firstY))
     
    
 
