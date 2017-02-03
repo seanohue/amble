@@ -1,5 +1,4 @@
 An experiment in creating a simple concurrency-friendly maze generator in Pony.
-Eventual goal is for this to be a procedural generation toolkit for roguelikes and similar applications.
 
 Algorithm(s) will be borrowed from roguebasin.
 
