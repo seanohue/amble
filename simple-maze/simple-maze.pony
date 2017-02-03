@@ -20,10 +20,6 @@ actor SimpleMazeGenerator
   be generate() =>
     _env.out.print("Generating...")
     prefill()
-    var keepGoing: Bool = true
-    while (keepGoing) {
-      keepGoing = carve(0, 0, North)
-    }
     render()
 
     // Creates map which is stored in 2D map
@@ -56,9 +52,8 @@ actor SimpleMazeGenerator
     end
 
   
-  fun carve(firstX: I64, firstY: I64, direction: Direction) => 
-    targetTile = _map.getByCoords(Coordinates.create(firstX, firstY))
-    
+  fun carve(firstX: I64, firstY: I64, direction: Direction) => None
+    // Should imitate carve function of other maze generator
    
 
 
