@@ -16,12 +16,10 @@ class Map2D
   fun ref values(): ArrayValues[MapTile, Array[MapTile]] =>
     tiles.values()
 
-  fun box getByCoords(other: Coordinates): this->MapTile ref^ =>
+  fun ref getByCoords(other: Coordinates): MapTile =>
     for tile in tiles.values() do
       if (tile.getCoordinates().eq(other)) then
         return tile
       end
     end
-    let errorTile: MapTile = MapTile.create(other, "error")
-    tiles.push(errorTile)
-    errorTile
+    return MapTile.create(other, "error")
